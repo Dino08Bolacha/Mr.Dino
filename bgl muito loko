@@ -1,0 +1,42 @@
+
+let cor;
+let posicaoHorizontal; // x
+let posicaoVertical; // y
+
+function setup() {
+  createCanvas(500, 500); // esse codigo é o tamanho do fundo 
+   background(color(100,0,0));
+  cor = color(random(0,255), random(0,255), random(0,255)); // esse codigo muda a cor do fundo
+  posicaoHorizontal = 200; // esse codigo coloca a bolinha na posiçao designada no fundo na horizontal
+  posicaoVertical = 200; // esse codigo coloca a bolinha na posiçao designada no fundo na vertical 
+}
+
+
+function draw() {
+  
+  fill(cor); // esse codigo preenche a cor da bolinha
+  circle(posicaoHorizontal,posicaoVertical,50); // esse codigo controla o tamanho da bolinha
+ 
+  
+  
+  if (mouseX < posicaoHorizontal){
+    posicaoHorizontal =  posicaoHorizontal - 10; // esse codigo controla a velocidade - da bolinha na horizontal
+  }
+  
+  if (mouseX > posicaoHorizontal){
+    posicaoHorizontal =  posicaoHorizontal + 10; // esse codigo controla a velocidade + da bolinha na horizontal
+  }
+  
+  if (mouseY < posicaoVertical){
+    posicaoVertical =  posicaoVertical - 12; // esse codigo controla a velocidade - da bolinha na vertical
+  }
+    
+  if (mouseY > posicaoVertical){
+    posicaoVertical =  posicaoVertical + 12; // esse codigo controla a velocidade + da bolinha na vertical
+  }
+  
+  if (mouseIsPressed){ // esse codigo é a molvimentaçao do mouse
+    cor = color(random(0,255), random(0,255), random(0,255), random(0,100)); // esse codigo ao clilcar muda a cor da bolinha 
+  }
+    
+}
